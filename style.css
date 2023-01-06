@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --Softblue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --pageBg: hsl(217, 54%, 11%);/*(main BG)*/
+    --cardBg: hsl(216, 50%, 16%); /*(card BG)*/
+    --Verydarkblue: hsl(215, 32%, 27%); /*(line)*/
+    --White: hsl(0, 0%, 100%);
+    --transtime: 0.25;
+}
+* {
+    color: var(--Softblue);
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+body {
+    min-height: 100vh;
+    background-color: var(--pageBg);
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 20px;
+    padding: 20px;
+    line-height: 1.9em;
+    background-color: var(--cardBg);
+}
+.image {
+    position: relative;
+}
+.main-image {
+    height: 100%;
+    width: 100%;
+}
+.overlay {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--Cyan);
+}
+.overlay:hover {
+    opacity: .5;
+    cursor: pointer;
+    transition: var(--transtime) all ease-in-out;
+}
+.overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.card h1 {
+    color: var(--White);
+    font-weight: 600;
+    font-size: 1.5em;
+    transition: var(--transtime) all ease-in-out;
+}
+.card p {
+    font-size: 18px;
+    font-weight: 300;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+.flex img {
+    display: inline-block;
+}
+.value {
+    color: var(--Cyan);
+}
+hr {
+    border-color: var(--Verydarkblue);
+}
+.author-info img {
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid var(--White);
+    height: 40px;
+}
+.card a {
+    text-decoration: none;
+    color: var(--White);
+    transition: var(--transtime) all ease-in-out;
+}
+h1:hover, a:hover {
+    color: var(--Cyan);
+    transition: var(--transtime) all ease-in-out;
+    cursor: pointer;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+}
+.attribution a {
+    color: var(--White);
+}
+@media screen and (max-width: 215px) {
+    .flex {
+        flex-direction: column;
+    }
+}
