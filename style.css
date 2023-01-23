@@ -2,7 +2,7 @@
 
 :root {
     --Softblue: hsl(215, 51%, 70%);
-    --Cyan: hsl(178, 100%, 50%);
+    --Cyan: 0, 255, 247;
     --pageBg: hsl(217, 54%, 11%);/*(main BG)*/
     --cardBg: hsl(216, 50%, 16%); /*(card BG)*/
     --Verydarkblue: hsl(215, 32%, 27%); /*(line)*/
@@ -27,9 +27,6 @@ main {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     width: 80%;
     max-width: 300px;
     border-radius: 20px;
@@ -37,25 +34,29 @@ main {
     line-height: 1.9em;
     background-color: var(--cardBg);
 }
+.card > * {
+    margin-top: 20px;
+}
 .image {
+    margin: 0;
     position: relative;
 }
 .main-image {
     height: 100%;
     width: 100%;
 }
+
 .overlay {
     position: absolute;
     opacity: 0;
-    height: 100%;
-    width: 100%;
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--Cyan);
+    
 }
 .overlay:hover {
-    opacity: .5;
+    opacity: 1;
+    background: rgba(var(--Cyan),.5);
     cursor: pointer;
     transition: var(--transtime) all ease-in-out;
 }
@@ -64,7 +65,6 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 1;
 }
 .card h1 {
     color: var(--White);
@@ -85,10 +85,12 @@ main {
     display: inline-block;
 }
 .value {
-    color: var(--Cyan);
+    color: rgb(var(--Cyan));
 }
 hr {
-    border-color: var(--Verydarkblue);
+    border: none;
+    height: 1px;
+    background-color: var(--Verydarkblue);
 }
 .author-info img {
     margin-right: 10px;
@@ -103,7 +105,7 @@ hr {
     transition: var(--transtime) all ease-in-out;
 }
 h1:hover, a:hover {
-    color: var(--Cyan);
+    color: rgb(var(--Cyan));
     transition: var(--transtime) all ease-in-out;
     cursor: pointer;
 }
